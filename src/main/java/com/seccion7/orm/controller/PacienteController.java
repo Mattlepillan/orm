@@ -1,0 +1,28 @@
+package com.seccion7.orm.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.seccion7.orm.model.Paciente;
+import com.seccion7.orm.service.PacienteService;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+
+@RestController
+@RequestMapping("/api/v1/pacientes")
+public class PacienteController {
+    @Autowired
+    private PacienteService pacienteService;
+
+    @GetMapping("path")
+    public ResponseEntity<List<Paciente>> getAll() {
+        return ResponseEntity<>(pacienteService);
+    }
+    
+    
+}
